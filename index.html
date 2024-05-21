@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Hambúrgeres Joystick!</title>
+  </head>
+  <body class="relative">
+    <div
+      id="modal"
+      class="fixed h-screen bg-stone-200 z-40 w-[300px] right-0 top-0 flex flex-col p-4"
+    >
+      <div
+        id="close"
+        class="w-full text-xl font-bold flex gap-2 items-center cursor-pointer"
+      >
+        Fechar carrinho
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1.5em"
+          height="1.5em"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="#ff0000"
+            d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"
+          />
+        </svg>
+      </div>
+      <ul id="carrinho" class="flex flex-col bg-white p-2 rounded"></ul>
+      <p class="mt-4 inline">TOTAL: <span id="total-value"></span></p>
+      <span
+        class="bg-red-500 font-bold rounded p-2 text-xl shadow-xl flex justify-around text-white cursor-pointer"
+        id="make-request"
+      >
+        <button>FAZER PEDIDO</button
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1.5em"
+          height="1.5em"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="#ffffff"
+            d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"
+          />
+        </svg>
+      </span>
+    </div>
+    <header
+      class="w-full bg-stone-50 h-20 flex justify-end items-center px-20 fixed top-0 left-0 z-20 shadow-xl"
+    >
+      <div class="flex px-6 cursor-pointer" id="open">
+        Carrinho
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1.5em"
+          height="1.5em"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="#828282"
+            d="M17 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2M1 2v2h2l3.6 7.59l-1.36 2.45c-.15.28-.24.61-.24.96a2 2 0 0 0 2 2h12v-2H7.42a.25.25 0 0 1-.25-.25q0-.075.03-.12L8.1 13h7.45c.75 0 1.41-.42 1.75-1.03l3.58-6.47c.07-.16.12-.33.12-.5a1 1 0 0 0-1-1H5.21l-.94-2M7 18c-1.11 0-2 .89-2 2a2 2 0 0 0 2 2a2 2 0 0 0 2-2a2 2 0 0 0-2-2"
+          />
+        </svg>
+      </div>
+      <ul class="flex gap-12 max-w-[1024px] text-gray-400 font-medium">
+        <li>OFERTAS</li>
+        <li>CUPONS</li>
+        <li>FRETE GRATIS</li>
+      </ul>
+    </header>
+    <main class="flex flex-col max-w-[1024px] px-6 gap-4 m-auto relative">
+      <div class="m-auto bg-red-200 w-full">
+        <img src="./images/MAINBANNER.jpg" class="w-full h-max" />
+      </div>
+      <p class="text-2xl font-medium mt-8">Mais pedidos:</p>
+      <div class="flex flex-wrap justify-around :justify-between gap-2 m-auto">
+        <div class="w-[320px] flex flex-col gap-1 mb-6" id="fifa">
+          <img src="./images/HAM1.jpg" />
+          <h2 class="text-xl font-bold">FIFA</h2>
+          <h3 class="text-gray-300">
+            sanduíche tradicional com fritas e salada
+          </h3>
+          <p class="font-bold">R$ 35,99</p>
+        </div>
+        <div class="w-[320px] flex flex-col gap-1 mb-6" id="gta">
+          <img src="./images/HAM2.png" />
+          <h2 class="text-xl font-bold">GTA</h2>
+          <h3 class="text-gray-300">combo com 3 hamburgers tradicionais</h3>
+          <p class="font-bold">R$ 65,99</p>
+        </div>
+        <div class="w-[320px] flex flex-col gap-1 mb-6" id="roblox">
+          <img src="./images/HAM3.png" />
+          <h2 class="text-xl font-bold">Roblox</h2>
+          <h3 class="text-gray-300">combo kid com sanduíche + batata frita</h3>
+          <p class="font-bold">R$ 19,99</p>
+        </div>
+        <div class="w-[320px] flex flex-col gap-1 mb-6" id="uno">
+          <img src="./images/HAM4.png" />
+          <h2 class="text-xl font-bold">UNO</h2>
+          <h3 class="text-gray-300">sanduíche com +4 de cheddar</h3>
+          <p class="font-bold">R$ 35,99</p>
+        </div>
+        <div class="w-[320px] flex flex-col gap-1 mb-6" id="minecraft">
+          <img src="./images/HAM5.png" />
+          <h2 class="text-xl font-bold">MINECRAFT</h2>
+          <h3 class="text-gray-300">combo adulto vegetariano</h3>
+          <p class="font-bold">R$ 59,99</p>
+        </div>
+        <div class="w-[320px] flex flex-col gap-1 mb-6" id="pou">
+          <img src="./images/HAM6.png" />
+          <h2 class="text-xl font-bold">POU</h2>
+          <h3 class="text-gray-300">sanduíche especial de carne seca</h3>
+          <p class="font-bold">R$ 24,99</p>
+        </div>
+      </div>
+      <p class="text-2xl font-medium mt-8">Ofertas da Semana:</p>
+      <div class="sm:grid sm:grid-cols-2 w-full gap-4">
+        <div class="flex flex-col" id="freefire">
+          <img src="./images/HAM7.png" alt="" />
+          <h2 class="text-xl font-bold">FREE FIRE</h2>
+          <h3 class="text-gray-300">
+            Hambúrguer com bacon, queijo cheddar e molho barbecue
+          </h3>
+          <p class="font-bold text-red-400">R$ 15,99</p>
+        </div>
+        <div class="flex flex-col gap-1 items-end">
+          <div class="flex flex-col sm:w-3/4" id="angrybirds">
+            <img src="./images/HAM8.png" alt="" />
+            <h2 class="text-xl font-bold">ANGRY BIRDS</h2>
+            <h3 class="text-gray-300">Sanduíche de frango crocante</h3>
+            <p class="font-bold text-red-400">R$ 10,99</p>
+          </div>
+          <div class="flex flex-col sm:w-3/4" id="valorant">
+            <img src="./images/HAM9.png" alt="" />
+            <h2 class="text-xl font-bold">VALORANT</h2>
+            <h3 class="text-gray-300">
+              Sanduíche tradicional + batata frita 300g
+            </h3>
+            <p class="font-bold text-red-400">R$ 25,99</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="max-w-[1024px] m-auto mt-8 px-6 pb-12 pt-6 border-t-2">
+      <div class="flex justify-between">
+        <div class="flex flex-col justify-between">
+          <h1 class="font-semibold text-2xl">JOYSTICK</h1>
+          <div class="flex gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1.5em"
+              height="1.5em"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#828282"
+                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1.5em"
+              height="1.5em"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#828282"
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1.5em"
+              height="1.5em"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#828282"
+                d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1.5em"
+              height="1.5em"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="#828282"
+                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
+              />
+            </svg>
+          </div>
+        </div>
+        <ul class="text-xl flex flex-col gap-3">
+          <li class="font-bold">Clientes</li>
+          <li>Feedback</li>
+          <li>Idioma</li>
+          <li>Ajuda</li>
+        </ul>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
