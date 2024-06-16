@@ -11,50 +11,9 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <title>Hambúrgeres Joystick!</title>
+    <title>Acompanhamentos Joystick!</title>
   </head>
   <body class="relative">
-    <div
-      id="modal"
-      class="fixed h-screen bg-stone-200 z-40 w-[300px] right-0 top-0 flex flex-col p-4"
-    >
-      <div
-        id="close"
-        class="w-full text-xl font-bold flex gap-2 items-center cursor-pointer"
-      >
-        Fechar carrinho
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1.5em"
-          height="1.5em"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="#ff0000"
-            d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"
-          />
-        </svg>
-      </div>
-      <ul id="carrinho" class="flex flex-col bg-white p-2 rounded"></ul>
-      <p class="mt-4 inline">TOTAL: <span id="total-value"></span></p>
-      <span
-        class="bg-red-500 font-bold rounded p-2 text-xl shadow-xl flex justify-around text-white cursor-pointer"
-        id="make-request"
-      >
-        <button>FAZER PEDIDO</button
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1.5em"
-          height="1.5em"
-          viewBox="0 0 24 24"
-        >
-          <path
-            fill="#ffffff"
-            d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"
-          />
-        </svg>
-      </span>
-    </div>
     <header
       class="w-full bg-stone-50 h-20 flex justify-end items-center px-20 fixed top-0 left-0 z-20 shadow-xl"
     >
@@ -81,75 +40,108 @@
       </ul>
     </header>
     <main class="flex flex-col max-w-[1024px] px-6 gap-4 m-auto relative">
-      <div class="m-auto bg-red-200 w-full">
-        <img src="./images/MAINBANNER.jpg" class="w-full h-max" />
-      </div>
-      <p class="text-2xl font-medium mt-8">Mais pedidos:</p>
       <div class="flex flex-wrap justify-around :justify-between gap-2 m-auto">
         <div class="w-[320px] flex flex-col gap-1 mb-6" id="fifa">
-          <img src="./images/HAM1.jpg" />
-          <h2 class="text-xl font-bold">FIFA</h2>
+          <img
+            class="w-[320px] h-[193px] object-cover"
+            src="images/Batata.jpg"
+            alt="Batata Frita"
+          />
+          <h2 class="text-xl font-bold">BATATA</h2>
           <h3 class="text-gray-300">
-            sanduíche tradicional com fritas e salada
+            Batata temperada com leve quantidade de sal 400g
           </h3>
-          <p class="font-bold">R$ 35,99</p>
+          <p class="font-bold">R$ 25,99</p>
         </div>
         <div class="w-[320px] flex flex-col gap-1 mb-6" id="gta">
-          <img src="./images/HAM2.png" />
-          <h2 class="text-xl font-bold">GTA</h2>
-          <h3 class="text-gray-300">combo com 3 hamburgers tradicionais</h3>
-          <p class="font-bold">R$ 65,99</p>
+          <!-- <div
+            class="w-[320px] h-[193px] aspect-video overflow-hidden rounded-xl"
+          > -->
+          <img
+            class="w-[320px] h-[193px] object-cover"
+            src="images/Batata_cheddar_bacon.jpg"
+            alt="Milkshake Morango"
+          />
+          <!-- </div> -->
+          <h2 class="text-xl font-bold">BATATA COM CHEDDAR</h2>
+          <h3 class="text-gray-300">Batata com cheddar 400g</h3>
+          <p class="font-bold">R$ 30,99</p>
         </div>
         <div class="w-[320px] flex flex-col gap-1 mb-6" id="roblox">
-          <img src="./images/HAM3.png" />
-          <h2 class="text-xl font-bold">Roblox</h2>
-          <h3 class="text-gray-300">combo kid com sanduíche + batata frita</h3>
+          <img
+            src="images/Batata_bacon.jpg"
+            alt="Açai"
+            class="w-[320px] h-[193px] object-cover"
+          />
+          <h2 class="text-xl font-bold">BATATA COM BACON</h2>
+          <h3 class="text-gray-300">Batata com bacon 400g</h3>
           <p class="font-bold">R$ 19,99</p>
         </div>
         <div class="w-[320px] flex flex-col gap-1 mb-6" id="uno">
-          <img src="./images/HAM4.png" />
-          <h2 class="text-xl font-bold">UNO</h2>
-          <h3 class="text-gray-300">sanduíche com +4 de cheddar</h3>
-          <p class="font-bold">R$ 35,99</p>
+          <img
+            src="images/Batata_queijo_cheddar_bacon.jpg"
+            alt="Gelatina Morango"
+            class="w-[320px] h-[193px] object-cover"
+          />
+          <h2 class="text-xl font-bold">BATATA COM QUEIJO, CHEEDAR E BACON</h2>
+          <h3 class="text-gray-300">Batata com queijo cheedar e Bacon</h3>
+          <p class="font-bold">R$ 40,99</p>
         </div>
         <div class="w-[320px] flex flex-col gap-1 mb-6" id="minecraft">
-          <img src="./images/HAM5.png" />
-          <h2 class="text-xl font-bold">MINECRAFT</h2>
-          <h3 class="text-gray-300">combo adulto vegetariano</h3>
-          <p class="font-bold">R$ 59,99</p>
+          <img
+            src="images/Cebola_empanada.jpeg"
+            alt="Petit Gateau"
+            class="w-[320px] h-[193px] object-cover"
+          />
+          <h2 class="text-xl font-bold">CEBOLA EMPANADA</h2>
+          <h3 class="text-gray-300">Batata com queijo prado</h3>
+          <p class="font-bold">R$ 25,99</p>
         </div>
         <div class="w-[320px] flex flex-col gap-1 mb-6" id="pou">
-          <img src="./images/HAM6.png" />
-          <h2 class="text-xl font-bold">POU</h2>
-          <h3 class="text-gray-300">sanduíche especial de carne seca</h3>
-          <p class="font-bold">R$ 24,99</p>
+          <img
+            src="images/Bolinha_queijo.jpeg"
+            alt="Pudim"
+            class="w-[320px] h-[193px] object-cover"
+            s
+          />
+          <h2 class="text-xl font-bold">BOLINHA DE QUEIJO</h2>
+          <h3 class="text-gray-300">Batata com queijo prado</h3>
+          <p class="font-bold">R$ 25,99</p>
         </div>
-      </div>
-      <p class="text-2xl font-medium mt-8">Ofertas da Semana:</p>
-      <div class="sm:grid sm:grid-cols-2 w-full gap-4">
-        <div class="flex flex-col" id="freefire">
-          <img src="./images/HAM7.png" alt="" />
-          <h2 class="text-xl font-bold">FREE FIRE</h2>
+        <div class="w-[320px] flex flex-col gap-1 mb-6" id="pou">
+          <img
+            src="images/Cebola_empanada.jpeg"
+            alt="Pudim"
+            class="w-[320px] h-[193px] object-cover"
+            s
+          />
+          <h2 class="text-xl font-bold">CEBOLA EMPANADA</h2>
+          <h3 class="text-gray-300">Cebola Empanada</h3>
+          <p class="font-bold">R$ 29,99</p>
+        </div>
+        <div class="w-[320px] flex flex-col gap-1 mb-6" id="pou">
+          <img
+            src="images/cookies.jpg"
+            alt="Pudim"
+            class="w-[320px] h-[193px] object-cover"
+            s
+          />
+          <h2 class="text-xl font-bold">FRANGOS</h2>
+          <h3 class="text-gray-300">Frango empanado</h3>
+          <p class="font-bold">R$ 29,99</p>
+        </div>
+        <div class="w-[320px] flex flex-col gap-1 mb-6" id="pou">
+          <img
+            src="images/Molhos.jpeg"
+            alt="Pudim"
+            class="w-[320px] h-[193px] object-cover"
+            s
+          />
+          <h2 class="text-xl font-bold">MOLHOS</h2>
           <h3 class="text-gray-300">
-            Hambúrguer com bacon, queijo cheddar e molho barbecue
+            Barbecue,Maione verde,Maione de alho,katchup,Mostarda e Maionese
           </h3>
-          <p class="font-bold text-red-400">R$ 15,99</p>
-        </div>
-        <div class="flex flex-col gap-1 items-end">
-          <div class="flex flex-col sm:w-3/4" id="angrybirds">
-            <img src="./images/HAM8.png" alt="" />
-            <h2 class="text-xl font-bold">ANGRY BIRDS</h2>
-            <h3 class="text-gray-300">Sanduíche de frango crocante</h3>
-            <p class="font-bold text-red-400">R$ 10,99</p>
-          </div>
-          <div class="flex flex-col sm:w-3/4" id="valorant">
-            <img src="./images/HAM9.png" alt="" />
-            <h2 class="text-xl font-bold">VALORANT</h2>
-            <h3 class="text-gray-300">
-              Sanduíche tradicional + batata frita 300g
-            </h3>
-            <p class="font-bold text-red-400">R$ 25,99</p>
-          </div>
+          <p class="font-bold">R$ 5,99</p>
         </div>
       </div>
     </main>
