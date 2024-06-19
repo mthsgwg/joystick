@@ -11,11 +11,11 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <title>Bebidas Joystick!</title>
+    <title>Registro Joystick!</title>
   </head>
   <body class="relative">
     <header
-      class="w-full bg-stone-50 h-20 flex justify-end items-center px-20 fixed top-0 left-0 z-20 shadow-xl"
+      class="w-full bg-stone-50 h-20 flex justify-end items-center xl:px-20 fixed top-0 left-0 z-20 shadow-xl"
     >
       <div class="flex px-6 cursor-pointer" id="open">
         Carrinho
@@ -42,98 +42,45 @@
       </ul>
     </header>
     <main class="flex flex-col max-w-[1024px] px-6 gap-4 m-auto relative">
-      <div class="flex flex-wrap justify-around :justify-between gap-2 m-auto">
-        <div class="w-[320px] flex flex-col gap-1 mb-6" id="fifa">
-          <img
-            class="w-[320px] h-[193px] object-cover"
-            src="images/Coca-Cola Lata.jpg"
-            alt="Batata Frita"
-          />
-          <h2 class="text-xl font-bold">Coca-Cola 350 ml</h2>
-          <p class="font-bold">R$ 5,99</p>
-        </div>
-        <div class="w-[320px] flex flex-col gap-1 mb-6" id="gta">
-          <!-- <div
-            class="w-[320px] h-[193px] aspect-video overflow-hidden rounded-xl"
-          > -->
-          <img
-            class="w-[320px] h-[193px] object-cover"
-            src="images/Fanta Laranja Lata.jpg"
-            alt="Milkshake Morango"
-          />
-          <!-- </div> -->
-          <h2 class="text-xl font-bold">Fanta Laranja 350 ml</h2>
-          <p class="font-bold">R$ 5,00</p>
-        </div>
-        <div class="w-[320px] flex flex-col gap-1 mb-6" id="roblox">
-          <img
-            src="images/Guraná Antartica Lata.jpg"
-            alt="Açai"
-            class="w-[320px] h-[193px] object-cover"
-          />
-          <h2 class="text-xl font-bold">Guaraná Antartica Lata 350 ml</h2>
-          <p class="font-bold">R$ 5,00</p>
-        </div>
-        <div class="w-[320px] flex flex-col gap-1 mb-6" id="uno">
-          <img
-            src="images/Guaraná Mineiro Lata.jpg"
-            alt="Gelatina Morango"
-            class="w-[320px] h-[193px] object-cover"
-          />
-          <h2 class="text-xl font-bold">Guaraná Mineiro 350 ml</h2>
-          <p class="font-bold">R$ 5,00</p>
-        </div>
-        <div class="w-[320px] flex flex-col gap-1 mb-6" id="minecraft">
-          <img
-            src="images/Suco Del Valle Uva.jpg"
-            alt="Petit Gateau"
-            class="w-[320px] h-[193px] object-cover"
-          />
-          <h2 class="text-xl font-bold">Suco Del Valle Uva 290 ml</h2>
-          <p class="font-bold">R$ 5,00</p>
-        </div>
-        <div class="w-[320px] flex flex-col gap-1 mb-6" id="pou">
-          <img
-            src="images/Suco Del Valle Maracujá.jpg"
-            alt="Pudim"
-            class="w-[320px] h-[193px] object-cover"
-            s
-          />
-          <h2 class="text-xl font-bold">Suco Del Valle Maracujá 290 ml</h2>
-          <p class="font-bold">R$ 5,00</p>
-        </div>
-        <div class="w-[320px] flex flex-col gap-1 mb-6" id="pou">
-          <img
-            src="images/Suco Natural Laranja.jpg"
-            alt="Pudim"
-            class="w-[320px] h-[193px] object-cover"
-            s
-          />
-          <h2 class="text-xl font-bold">Suco Natural de Laranja</h2>
-          <p class="font-bold">R$ 7,99</p>
-        </div>
-        <div class="w-[320px] flex flex-col gap-1 mb-6" id="pou">
-          <img
-            src="images/Suco Natural Acerola.jpg"
-            alt="Pudim"
-            class="w-[320px] h-[193px] object-cover"
-            s
-          />
-          <h2 class="text-xl font-bold">Suco Natural de Acerola</h2>
-          <p class="font-bold">R$ 7,99</p>
-        </div>
-        <div class="w-[320px] flex flex-col gap-1 mb-6" id="pou">
-          <img
-            src="images/Suco Natural Limão.jpg"
-            alt="Pudim"
-            class="w-[320px] h-[193px] object-cover"
-            s
-          />
-          <h2 class="text-xl font-bold">Suco Natural de Limão</h2>
+      <form class="m-auto flex flex-col">
+        <h1 class="text-2xl font-bold">Faça seu Cadastro</h1>
+        <label for="email" class="mt-4">Nome</label>
+        <input
+          type="text"
+          name=""
+          id=""
+          class="bg-gray-100 border rounded p-2 px-4 mt-1"
+          placeholder="John Doe"
+        />
+        <label for="email" class="mt-4">CPF</label>
+        <input
+          type="number"
+          name=""
+          id=""
+          class="bg-gray-100 border rounded p-2 px-4 mt-1"
+          placeholder="123.456.789-00"
+        />
+        <label for="email" class="mt-4">Email</label>
+        <input
+          type="email"
+          name=""
+          id=""
+          class="bg-gray-100 border rounded p-2 px-4 mt-1"
+          placeholder="example@gmail.com"
+        />
+        <label for="email" class="mt-2">Senha</label>
 
-          <p class="font-bold">R$ 7,99</p>
-        </div>
-      </div>
+        <input
+          type="password"
+          name=""
+          id=""
+          class="bg-gray-100 border rounded p-2 px-4 mt-1"
+          placeholder="****"
+        />
+        <button class="mt-4 bg-gray-200 rounded-xl p-3 text-xl font-bold">
+          REGISTRAR
+        </button>
+      </form>
     </main>
     <footer class="max-w-[1024px] m-auto mt-8 px-6 pb-12 pt-6 border-t-2">
       <div class="flex justify-between">
