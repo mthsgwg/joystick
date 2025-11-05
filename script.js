@@ -129,7 +129,7 @@ function main() {
     ${items} \n
     Total: R$${total.toFixed(2)} \n
     Obrigado por fazer seu pedido conosco!`;
-    window.open(`https://wa.me/+5534998068991?text=${request}`);
+    window.open(`https://wa.me/+55349999999?text=${request}`);
   });
 
   close.addEventListener("click", () => modal.classList.add("hidden"));
